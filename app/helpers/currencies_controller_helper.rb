@@ -1,0 +1,2 @@
+module CurrenciesControllerHelper
+end
