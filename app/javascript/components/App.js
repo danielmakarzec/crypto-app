@@ -1,9 +1,12 @@
 import React, { Component } from 'react'
+import PortfolioContainer from './PortfolioContainer'
 
 class App extends Component {
   render(){
     return(
-      <div>App text</div>
+      <div>
+        <PortfolioContainer />
+      </div>
     )
   }
 }
