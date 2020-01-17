@@ -12,7 +12,7 @@ class Search extends Component {
         <from>
           <div className="form-group">
             <label>Search for currency</label>
-            <input clasName="field" onChange={this.handleChange} type="text" name='name' placeholder='ex: Bitcoin' value={this.props.name} />
+            <input clasName="field" onChange={this.props.handleChange} type="text" name='name' placeholder='ex: Bitcoin' value={this.props.name} />
           </div>
         </from>
       </div>
