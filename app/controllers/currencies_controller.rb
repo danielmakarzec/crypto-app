@@ -1,16 +1,17 @@
 class CurrenciesController < ApplicationController
   def index
-    Currency.all
   end
 
   def search
     @currencies = Currency.where('LOWER(name) LIKE ?', "%#{params[:search].downcase}%")
-    render JSON: { currencies: @currencies }
+    render json: { currencies: @currencies }
   end
 
+  # Takes in the currency id and the amount owned
+  # Returns final calculations
   def calculate
     amount = params[:amount]
-    render JSON: {
+    render json: {
       currency: currency,
       current_price: currency.current_price,
       amount: amount,
@@ -21,6 +22,6 @@ class CurrenciesController < ApplicationController
   private
 
   def currency
-    @currency = Currency.find(params[:id])
+    @currency ||= Currency.find(params[:id])
   end
 end

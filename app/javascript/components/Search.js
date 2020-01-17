@@ -1,20 +1,26 @@
 import React, { Component } from 'react'
+import SearchResult from './SearchResult'
 
 class Search extends Component {
-  constructor(props) {
+  constructor(props){
     super(props)
   }
 
   render(){
+    const searchResults = this.props.searchResults.map( curr => <SearchResult key={curr.id} currency={curr} handleSelect={this.props.handleSelect} />)
+
     return(
       <div>
-        <h1>Search Currency</h1>
-        <from>
+        <h1>Cryptocurrency Portfolio Calculator</h1>
+        <form>
           <div className="form-group">
-            <label>Search for currency</label>
-            <input clasName="field" onChange={this.props.handleChange} type="text" name='name' placeholder='ex: Bitcoin' value={this.props.name} />
+            <label>Search for a Currency:</label><br/>
+            <input onChange={this.props.handleChange} autoComplete="off" type="text" name="name" placeholder="Ex: Bitcoin, Litecoin, Ethereum..." value={this.props.name} className="field"/>
           </div>
-        </from>
+          <div className="currency-list">
+            {searchResults}
+          </div>
+        </form>
       </div>
     )
   }
