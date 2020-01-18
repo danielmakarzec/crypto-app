@@ -66,7 +66,7 @@ class PortfolioContainer extends Component {
       })
     })
     .catch( (data) => {
-      //console.log(data)
+      console.log('error: Something went wrong :(')
     })
   }
 

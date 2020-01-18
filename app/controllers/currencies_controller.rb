@@ -22,6 +22,6 @@ class CurrenciesController < ApplicationController
   private
 
   def currency
-    @currency ||= Currency.find(params[:id])
+    @currency = Currency.find(params[:id])
   end
 end
